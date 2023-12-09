@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   GoHome,
   GoGraph,
@@ -8,9 +9,9 @@ import {
 const SideBar = () => {
   return (
     <div className='flex flex-col w-40 h-screen items-center justify-center gap-12 shadow'>
-      <GoHome size="2rem" />
-      <GoGraph size="2rem" />
-      <GoPerson size="2rem" />
+      <Link to='/'><GoHome size="2rem" /></Link> 
+      <Link to='/graph'><GoGraph size="2rem" /></Link> 
+      <Link to='/user'><GoPerson size="2rem" /></Link> 
     </div>
   )
 }
