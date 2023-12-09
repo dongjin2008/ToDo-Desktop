@@ -2,7 +2,9 @@ import React from 'react'
 
 const graph = () => {
   return (
-    <div>graph</div>
+    <main className='w-full h-full'>
+      <h1 className='text-center'>Graph</h1>
+    </main>
   )
 }
 
