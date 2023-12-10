@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import supabase from '../apis/db'
+import IconButton from '../components/IconButton'
+import {
+  GoPlus,
+} from "react-icons/go"
 
 const Home = () => {
   const [dates, setDates] = useState([])
-  useEffect(() => {
-    updateDates()
-  }, [])
   const handleClick = async () => {
     // supabase insert example
     const { error } = await supabase
@@ -16,35 +17,22 @@ const Home = () => {
       ])
     console.log(error)
   }
-  const updateDates = () => {
-    let date = new Date()
-    let newDates = [];
-
-    for (let i = 0; i < 7; i++) {
-      let day = date.getDate();
-      if (day < 10) {
-        day = `0${day}`
-      }
-
-      let dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
-      newDates.push(`${day}/${dayOfWeek}`)
-      date.setDate(date.getDate() + 1)
-    }
-
-    setDates(newDates)
-  }
 
   return (
-    <main className='w-full h-full'>
-      <h1 className='text-center'>Home</h1>
-      <ul className='text-center'>
-        {dates.map((date, index) => {
-          return (
-            <li key={index}>{date}</li>
-          )
-        })}
-      </ul>
-      <button onClick={handleClick}>Click me</button>
+    <main className='w-screen h-screen px-[8.06rem] py-[3.75rem]'>
+      <div className='w-full h-full flex gap-6'>
+        <div className='w-[42.5rem] h-full bg-secondary rounded-lg px-6 py-[1.56rem]'>
+          <div className='flex justify-between'>
+            <h1 className='text-primary font-semibold text-[1.938rem]'>Study Todos 👨‍🎓</h1>
+            <IconButton>
+              <GoPlus className='text-primary opactiy-100' size="2rem" />
+            </IconButton>
+          </div>
+        </div>
+        <div className='w-[20.5rem] h-full bg-accent rounded-lg'>
+
+        </div>
+      </div>
     </main>
   )
 }

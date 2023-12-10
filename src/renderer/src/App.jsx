@@ -4,13 +4,17 @@ import { Home, Graph, User } from './pages';
 
 function App() {
   return (
-    <main className="flex">
-      <SideBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/graph" element={<Graph />} />
-        <Route path="/user" element={<User />} />
-      </Routes>
+    <main className="flex overflow-hidden">
+      <div className='shrink grow-0'>
+        <SideBar />
+      </div>
+      <div className='shrink-0 grow'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/graph" element={<Graph />} />
+          <Route path="/user" element={<User />} />
+        </Routes>
+      </div>
     </main>
   )
 }

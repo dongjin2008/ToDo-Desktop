@@ -8,7 +8,13 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#F8F1ED',
+        'secondary': '#362D3B',
+        'accent': '#5E41A7',
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
