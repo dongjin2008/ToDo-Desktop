@@ -1,7 +1,6 @@
 import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
 
 function createWindow() {
   // Create the browser window.
@@ -15,6 +14,12 @@ function createWindow() {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false
     }
+  })
+
+  mainWindow.setTitle('Todo App')
+
+  mainWindow.on('page-title-updated', (e) => {
+    e.preventDefault()
   })
 
   mainWindow.on('ready-to-show', () => {

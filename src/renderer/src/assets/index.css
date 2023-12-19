@@ -2,16 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+all {
+  box-sizing: border-box;
+}
+
 html {
   width: 100vw;
   height: 100vh;
   font-size: 16px;
 }
 
+scrollbar-gutter {
+  scrollbar-gutter: stable;
+
+}
 
 .shadow {
   box-shadow: 4px 0 4px 0 rgba(0, 0, 0, 0.25);
 }
+
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: WHITE;
+  background-image: none;
+  border: 1px solid #747775;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 40px;
+  max-width: 400px;
+  min-width: min-content;
+}
+
 
 @media only screen and (max-width: 1300px) {
   html {
