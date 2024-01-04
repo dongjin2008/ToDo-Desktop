@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { IconButton } from '.'
-import { GoArrowRight, GoPlus } from "react-icons/go"
-import supabase from '../apis/db'
+import { GoPlus } from "react-icons/go"
 import Folder from './Folder'
 import state from '../state/state'
 import { useSnapshot } from 'valtio'
@@ -20,7 +19,7 @@ const Folders = () => {
   }
 
 
-  
+
   return (
     <div className='flex flex-col gap-4 w-[20.5rem] h-[32.5rem] rounded-lg'>
       <div className='flex justify-between items-center'>
@@ -28,13 +27,13 @@ const Folders = () => {
         <IconButton onClick={() => snap.createFolder()}>
           <GoPlus className='text-secondary' size="2rem" />
         </IconButton>
-      </div> 
+      </div>
       <div className='flex flex-col h-[20rem] gap-4 scrollbar-gutter overflow-x-clip overflow-y-scroll'>
         {snap.folders.map((folder) => {
           return (
             <Folder key={folder.id} folder={folder} handleChange={handleChange} /> 
           )
-        })} 
+        })}
       </div>
     </div>
   )

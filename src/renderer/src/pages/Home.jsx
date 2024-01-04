@@ -18,6 +18,7 @@ const Home = () => {
     snap.getTodos()
     snap.getDailyGoal()
     snap.updateTodo()
+    snap.getFirstFolderId()
   }, [])
   
   useEffect(() => {

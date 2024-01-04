@@ -13,8 +13,6 @@ const Todo = ({todo}) => {
     setDone(todo.isDone)
   }, [todo.isDone])
   useEffect(() => {
-    console.log(taskName)
-    console.log(todo.task)
     handleChange()
   }, [taskName])
   const handleChange = async () => {

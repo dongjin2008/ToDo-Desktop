@@ -13,7 +13,6 @@ const Folder = ({ folder }) => {
   }
 
   useEffect(() => {
-    console.log(name)
     snap.updateFolder(folder, name)
   }, [name])
   return (
@@ -21,7 +20,7 @@ const Folder = ({ folder }) => {
       <div className='w-full flex justify-between'>
         <div className='flex flex-col gap-0'>
           <input type='text' onChange={(e) => {setName(e.target.value)}}  className='w-[11.5rem] text-[1.562rem] bg-secondary font-semibold text-primary' value={name} />
-          <h1 className='text-base font-light text-primary'>10 todos left</h1>
+          <h1 className='text-base font-light text-primary'>{`${folder.todoLeft} todo left`}</h1>
         </div>
         <div className='flex items-center'>
           <IconButton onClick={() => {handleClick()}}>
